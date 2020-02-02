@@ -1,0 +1,27 @@
+from building import *
+
+cwd          = GetCurrentDir()
+include_path = [cwd]
+src          = []
+
+if GetDepend(['RT_USING_GRAY']):
+    src += Glob('bsp_adc.c')
+
+if GetDepend(['RT_USING_MOTOR']):
+    src += Glob('bsp_motor.c')
+
+if GetDepend(['RT_USING_OLED']):
+    src += Glob('bsp_oled.c')
+
+if GetDepend(['RT_USING_BUTTON']):
+    src += Glob('bsp_button.c')
+
+if GetDepend(['RT_USING_BUZZER']):
+    src += Glob('bsp_buzzer.c')
+
+if GetDepend(['RT_USING_INFRARED']):
+    src += Glob('bsp_infrared.c')
+
+group = DefineGroup('BspDrivers', src, depend = ['RT_USING_BSPDRIVER'], CPPPATH = include_path)
+
+Return('group')
