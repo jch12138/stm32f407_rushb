@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-30 19:17:23
- * @LastEditTime : 2020-02-02 21:52:44
+ * @LastEditTime : 2020-02-02 22:04:09
  * @LastEditors  : Please set LastEditors
  * @Description: driver for oled
  * @FilePath: \stm32f407-rushb\bsp_driver\bsp_oled.h
@@ -39,5 +39,11 @@
 #define OLED_CMD    0
 #define OLED_DATA   1
 
-rt_err_t oled_init(void)
+/**
+ * @description: oled initilaze
+ * @param none
+ * @return: status
+ */
+rt_err_t oled_init(void);
+
 #endif
