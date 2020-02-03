@@ -98,5 +98,7 @@ extern SINGLE_INFO infrared_info;
 extern LINE_POS line;
 extern LINE_POS back_line;
 
+/* oled show mode control */
+extern rt_uint8_t oled_show_mode;
 
 #endif

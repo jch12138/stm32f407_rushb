@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 20:42:24
- * @LastEditTime : 2020-02-02 19:50:45
+ * @LastEditTime : 2020-02-03 15:07:20
  * @LastEditors  : Please set LastEditors
  * @Description: map information
  * @FilePath: \stm32f407-rushb\applications\map.c
@@ -206,17 +206,17 @@ void update_speed_back(void)
  */
 void show_parameter(void)
 {
-    rt_kprintf("kp_center     :%5d\t kd_center     :%5d\n", kp_center, kd_center);
-    rt_kprintf("kp_leftt      :%5d\t kd_leftt      :%5d\n", kp_leftt, kd_leftt);
-    rt_kprintf("kp_rightt     :%5d\t kd_rightt     :%5d\n", kp_rightt, kd_rightt);
-    rt_kprintf("kp_centerleft :%5d\t kd_centerleft :%5d\n", kp_centerleft, kd_centerleft);
-    rt_kprintf("kp_upbridge   :%5d\t kd_upbridge   :%5d\n", kp_upbridge, kd_upbridge);
-    rt_kprintf("kp_bridge     :%5d\t kd_bridge     :%5d\n", kp_bridge, kd_bridge);
-    rt_kprintf("kp_wave       :%5d\t kd_wave       :%5d\n", kp_wave, kd_wave);
-    rt_kprintf("kp_seesaw     :%5d\t kd_seesaw     :%5d\n", kp_seesaw, kd_seesaw);
-    rt_kprintf("kp_round      :%5d\t kd_round      :%5d\n", kp_round, kd_round);
-    rt_kprintf("kp_slow       :%5d\t kd_slow       :%5d\n", kp_slow, kd_slow);
-    rt_kprintf("kp_back       :%5d\t kd_back       :%5d\n", kp_back, kd_back);
+    rt_kprintf("kp_center     :%5d kd_center     :%5d\n", kp_center, kd_center);
+    rt_kprintf("kp_leftt      :%5d kd_leftt      :%5d\n", kp_leftt, kd_leftt);
+    rt_kprintf("kp_rightt     :%5d kd_rightt     :%5d\n", kp_rightt, kd_rightt);
+    rt_kprintf("kp_centerleft :%5d kd_centerleft :%5d\n", kp_centerleft, kd_centerleft);
+    rt_kprintf("kp_upbridge   :%5d kd_upbridge   :%5d\n", kp_upbridge, kd_upbridge);
+    rt_kprintf("kp_bridge     :%5d kd_bridge     :%5d\n", kp_bridge, kd_bridge);
+    rt_kprintf("kp_wave       :%5d kd_wave       :%5d\n", kp_wave, kd_wave);
+    rt_kprintf("kp_seesaw     :%5d kd_seesaw     :%5d\n", kp_seesaw, kd_seesaw);
+    rt_kprintf("kp_round      :%5d kd_round      :%5d\n", kp_round, kd_round);
+    rt_kprintf("kp_slow       :%5d kd_slow       :%5d\n", kp_slow, kd_slow);
+    rt_kprintf("kp_back       :%5d kd_back       :%5d\n", kp_back, kd_back);
 }
 MSH_CMD_EXPORT(show_parameter,show parameters);
 FINSH_FUNCTION_EXPORT(show_parameter,show parameter);
