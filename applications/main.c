@@ -18,11 +18,11 @@ int main(void)
     int count = 1;
     /* set LED0 pin mode to output */
     rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
-		adc_init();
+		//adc_init();
     oled_init();
 		
     oled_showstring(0,0,"Hello");
-    
+
     while (count++)
     {
         rt_pin_write(LED0_PIN, PIN_HIGH);

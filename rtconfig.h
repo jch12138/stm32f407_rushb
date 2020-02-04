@@ -184,5 +184,6 @@
 #define RT_USING_BSPDRIVER
 #define RT_USING_GRAY
 #define RT_USING_MOTOR
+#define RT_USING_OLED
 
 #endif

@@ -1,37 +1,38 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-30 19:17:29
- * @LastEditTime : 2020-02-03 20:33:13
+ * @LastEditTime : 2020-02-03 21:13:43
  * @LastEditors  : Please set LastEditors
  * @Description: driver for oled
  * @FilePath: \stm32f407-rushb\bsp_driver\bsp_oled.c
  */
 #include "bsp_oled.h"
+#include "bsp_oled_font.h"
 
 /* oled show mode control */
-extern rt_uint8_t oled_show_mode;
+rt_uint8_t oled_show_mode = 0;
 
 /* oled low level api */
 void OLED_WR_Byte(rt_uint8_t dat, rt_uint8_t cmd)
 {
     rt_uint8_t i;
     if (cmd)
-        OLED_DC_Set();
+        OLED_DC_SET;
     else
-        OLED_DC_Clr();
-    OLED_CS_Clr();
+        OLED_DC_RESET;
+    OLED_CS_RESET;
     for (i = 0; i < 8; i++)
     {
-        OLED_SCLK_Clr();
+        OLED_SCK_RESET;
         if (dat & 0x80)
-            OLED_SDIN_Set();
+            OLED_SDA_SET;
         else
-            OLED_SDIN_Clr();
-        OLED_SCLK_Set();
+            OLED_SDA_RESET;
+        OLED_SCK_SET;
         dat <<= 1;
     }
-    OLED_CS_Set();
-    OLED_DC_Set();
+    OLED_CS_SET;
+    OLED_DC_SET;
 }
 
 void OLED_Set_Pos(unsigned char x, unsigned char y) 
@@ -75,26 +76,23 @@ void OLED_Clear(void)
  */
 rt_err_t oled_init(void)
 {
-    rt_pin_mode(OLED_SCK_PIN, PIN_MODE_OUTPUT);
-    rt_pin_mode(OLED_SCK_PIN, PIN_MODE_OUTPUT);
-
     rt_pin_mode(OLED_SDA_PIN, PIN_MODE_OUTPUT);
     rt_pin_mode(OLED_SCK_PIN, PIN_MODE_OUTPUT);
-
     rt_pin_mode(OLED_RST_PIN, PIN_MODE_OUTPUT);
-    rt_pin_mode(OLED_RST_PIN, PIN_MODE_OUTPUT);
-
     rt_pin_mode(OLED_DC_PIN, PIN_MODE_OUTPUT);
-    rt_pin_mode(OLED_DC_PIN, PIN_MODE_OUTPUT);
-
-    rt_pin_mode(OLED_CS_PIN, PIN_MODE_OUTPUT);
     rt_pin_mode(OLED_CS_PIN, PIN_MODE_OUTPUT);
 
-    OLED_RST_Set();
+    rt_pin_write(OLED_SCK_PIN, PIN_HIGH);
+    rt_pin_write(OLED_SDA_PIN, PIN_HIGH);
+    rt_pin_write(OLED_RST_PIN, PIN_HIGH);
+    rt_pin_write(OLED_DC_PIN, PIN_HIGH);
+    rt_pin_write(OLED_CS_PIN, PIN_HIGH);
+
+    OLED_RST_SET;
 	rt_thread_mdelay(200);
-	OLED_RST_Clr();
+	OLED_RST_RESET;
 	rt_thread_mdelay(200);
-	OLED_RST_Set(); 
+	OLED_RST_SET; 
 					  
 	OLED_WR_Byte(0xAE,OLED_CMD);//--turn off oled panel
 	OLED_WR_Byte(0x00,OLED_CMD);//---set low column address
@@ -149,7 +147,10 @@ void oled_showchar(rt_uint8_t x,rt_uint8_t y,char ch)
 	OLED_Set_Pos(x,y);
 	for(i=0;i<6;i++)
 	{
-		mode_char = ~F6x8[c][i];
+        if(oled_show_mode == 0)
+			mode_char = ~F6x8[c][i];
+		else
+			mode_char = F6x8[c][i];
 		OLED_WR_Byte(mode_char,OLED_DATA);
 	}
 }
@@ -166,7 +167,7 @@ void oled_showstring(rt_int8_t x, rt_int8_t y, char *p)
     unsigned char j = 0;
     while (p[j] != '\0')
     {
-        oled_showchar(x, y, chr[j]);
+        oled_showchar(x, y, p[j]);
         x += 6;
         if (x > 120)
         {
