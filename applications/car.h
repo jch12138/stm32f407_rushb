@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 17:30:34
- * @LastEditTime : 2020-02-02 21:38:10
+ * @LastEditTime : 2020-02-04 19:34:13
  * @LastEditors  : Please set LastEditors
  * @Description: information of car , include all needed global parameters and structs.
  * @FilePath: \stm32f407-rushb\applications\car.h
@@ -15,11 +15,17 @@
 #include <board.h>
 #include <finsh.h>
 
+#include "map.h"
+#include "menu.h"
+#include "pathplan.h"
+
 #include "bsp_motor.h"
 #include "bsp_adc.h"
 #include "bsp_infrared.h"
 #include "bsp_button.h"
 #include "bsp_oled.h"
+
+#include "easyflash.h"
 
 /* various track mode */
 #define NONE        0

@@ -137,9 +137,24 @@
 
 /* tools packages */
 
+#define PKG_USING_EASYFLASH
+#define PKG_EASYFLASH_ENV
+#define PKG_EASYFLASH_ERASE_GRAN 131072
+#define PKG_EASYFLASH_WRITE_GRAN_8BITS
+#define PKG_EASYFLASH_WRITE_GRAN 8
+#define PKG_EASYFLASH_START_ADDR 0
+#define PKG_EASYFLASH_DEBUG
+#define PKG_USING_EASYFLASH_V400
+#define PKG_EASYFLASH_VER_NUM 0x40000
 
 /* system packages */
 
+#define PKG_USING_FAL
+#define FAL_DEBUG_CONFIG
+#define FAL_DEBUG 1
+#define FAL_PART_HAS_TABLE_CFG
+#define PKG_USING_FAL_V00400
+#define PKG_FAL_VER_NUM 0x00400
 
 /* peripheral libraries and drivers */
 
@@ -178,6 +193,7 @@
 #define BSP_USING_PWM2_CH2
 #define BSP_USING_PWM2_CH3
 #define BSP_USING_PWM2_CH4
+#define BSP_USING_ON_CHIP_FLASH
 
 /* Bsp Drivers */
 

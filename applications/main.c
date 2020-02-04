@@ -19,10 +19,15 @@ int main(void)
     /* set LED0 pin mode to output */
     rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
 		//adc_init();
-    oled_init();
+    //oled_init();
 		
-    oled_showstring(0,0,"Hello");
+    //oled_showstring(0,0,"Hello");
 
+    fal_init();
+    easyflash_init();
+
+    load_parameter();
+    
     while (count++)
     {
         rt_pin_write(LED0_PIN, PIN_HIGH);

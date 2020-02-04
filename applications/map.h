@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 20:42:19
- * @LastEditTime : 2020-02-02 19:38:05
+ * @LastEditTime : 2020-02-04 19:33:32
  * @LastEditors  : Please set LastEditors
  * @Description: map information 
  * @FilePath: \stm32f407-rushb\applications\map.h
@@ -46,5 +46,20 @@ void update_speed(void);
  * @return: none
  */
 void update_speed_back(void);
+
+
+/**
+ * @description: save pid parameters to on-chip flash
+ * @param none 
+ * @return: none
+ */
+void save_parameters(void);
+
+/**
+ * @description: read pid parameter from flash
+ * @param none
+ * @return: none
+ */
+void load_parameter(void);
 
 #endif

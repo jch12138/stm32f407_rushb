@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 20:42:24
- * @LastEditTime : 2020-02-03 15:07:20
+ * @LastEditTime : 2020-02-04 19:48:42
  * @LastEditors  : Please set LastEditors
  * @Description: map information
  * @FilePath: \stm32f407-rushb\applications\map.c
@@ -51,6 +51,205 @@ FINSH_VAR_EXPORT(kd_round,      finsh_type_int,     kd round)
 FINSH_VAR_EXPORT(kd_slow,       finsh_type_int,     kd slow)
 FINSH_VAR_EXPORT(kd_back,       finsh_type_int,     kd back)
 
+/**
+ * @description: save pid parameters to on-chip flash
+ * @param none 
+ * @return: none
+ */
+void save_parameters(void)
+{
+    char buf[5];
+
+    rt_sprintf(buf,"%d",kp_center);
+    ef_set_env("kp_center",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_leftt);
+    ef_set_env("kp_leftt",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_rightt);
+    ef_set_env("kp_rightt",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_centerleft);
+    ef_set_env("kp_centerleft",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_upbridge);
+    ef_set_env("kp_upbridge",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_bridge);
+    ef_set_env("kp_bridge",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_wave);
+    ef_set_env("kp_wave",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_seesaw);
+    ef_set_env("kp_seesaw",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_round);
+    ef_set_env("kp_round",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_slow);
+    ef_set_env("kp_slow",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kp_back);
+    ef_set_env("kp_back",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_center);
+    ef_set_env("kd_center",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_leftt);
+    ef_set_env("kd_leftt",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_rightt);
+    ef_set_env("kd_rightt",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_centerleft);
+    ef_set_env("kd_centerleft",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_upbridge);
+    ef_set_env("kd_upbridge",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_bridge);
+    ef_set_env("kd_bridge",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_wave);
+    ef_set_env("kd_wave",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_seesaw);
+    ef_set_env("kd_seesaw",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_round);
+    ef_set_env("kd_round",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_slow);
+    ef_set_env("kd_slow",buf);
+    rt_memset(buf,0,5);
+
+    rt_sprintf(buf,"%d",kd_back);
+    ef_set_env("kd_back",buf);
+    rt_memset(buf,0,5);
+
+}
+MSH_CMD_EXPORT(save_parameters,save para);
+
+/**
+ * @description: read pid parameter from flash
+ * @param none
+ * @return: none
+ */
+void load_parameter(void)
+{
+    char value[5];
+
+    ef_get_env_blob("kp_center", value, sizeof(value) , NULL);
+    kp_center = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_leftt", value, sizeof(value) , NULL);
+    kp_leftt = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_rightt", value, sizeof(value) , NULL);
+    kp_rightt = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_centerleft", value, sizeof(value) , NULL);
+    kp_centerleft = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_upbridge", value, sizeof(value) , NULL);
+    kp_upbridge = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_bridge", value, sizeof(value) , NULL);
+    kp_bridge = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_wave", value, sizeof(value) , NULL);
+    kp_wave = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_seesaw", value, sizeof(value) , NULL);
+    kp_seesaw = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_round", value, sizeof(value) , NULL);
+    kp_round = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_slow", value, sizeof(value) , NULL);
+    kp_slow = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kp_back", value, sizeof(value) , NULL);
+    kp_back = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_center", value, sizeof(value) , NULL);
+    kd_center = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_leftt", value, sizeof(value) , NULL);
+    kd_leftt = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_rightt", value, sizeof(value) , NULL);
+    kd_rightt = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_centerleft", value, sizeof(value) , NULL);
+    kd_centerleft = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_upbridge", value, sizeof(value) , NULL);
+    kd_upbridge = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_bridge", value, sizeof(value) , NULL);
+    kd_bridge = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_wave", value, sizeof(value) , NULL);
+    kd_wave = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_seesaw", value, sizeof(value) , NULL);
+    kd_seesaw = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_round", value, sizeof(value) , NULL);
+    kd_round = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_slow", value, sizeof(value) , NULL);
+    kd_slow = atoi(value);
+    rt_memset(value,0,5);
+
+    ef_get_env_blob("kd_back", value, sizeof(value) , NULL);
+    kd_back = atoi(value);
+    rt_memset(value,0,5);
+}
+
+MSH_CMD_EXPORT(load_parameter,load para);
 
 /**
  * @description: float abs function
@@ -217,6 +416,8 @@ void show_parameter(void)
     rt_kprintf("kp_round      :%5d kd_round      :%5d\n", kp_round, kd_round);
     rt_kprintf("kp_slow       :%5d kd_slow       :%5d\n", kp_slow, kd_slow);
     rt_kprintf("kp_back       :%5d kd_back       :%5d\n", kp_back, kd_back);
+
+    save_parameters();
 }
 MSH_CMD_EXPORT(show_parameter,show parameters);
 FINSH_FUNCTION_EXPORT(show_parameter,show parameter);
