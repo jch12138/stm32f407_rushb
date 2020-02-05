@@ -1,7 +1,7 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 20:42:24
- * @LastEditTime : 2020-02-04 19:48:42
+ * @LastEditTime : 2020-02-05 17:28:52
  * @LastEditors  : Please set LastEditors
  * @Description: map information
  * @FilePath: \stm32f407-rushb\applications\map.c
@@ -150,6 +150,7 @@ void save_parameters(void)
 
 }
 MSH_CMD_EXPORT(save_parameters,save para);
+FINSH_FUNCTION_EXPORT(save_parameters,save para);
 
 /**
  * @description: read pid parameter from flash
@@ -417,7 +418,7 @@ void show_parameter(void)
     rt_kprintf("kp_slow       :%5d kd_slow       :%5d\n", kp_slow, kd_slow);
     rt_kprintf("kp_back       :%5d kd_back       :%5d\n", kp_back, kd_back);
 
-    save_parameters();
+    //save_parameters();
 }
 MSH_CMD_EXPORT(show_parameter,show parameters);
 FINSH_FUNCTION_EXPORT(show_parameter,show parameter);
