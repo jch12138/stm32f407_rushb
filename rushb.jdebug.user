@@ -1,17 +1,12 @@
 
-OpenDocument="main.c", FilePath="F:/rt-thread/bsp/stm32/stm32f407-rushb/applications/main.c", Line=0
-OpenDocument="stm32f4xx_hal_msp.c", FilePath="F:/rt-thread/bsp/stm32/stm32f407-rushb/board/CubeMX_Config/Src/stm32f4xx_hal_msp.c", Line=83
-OpenDocument="idle.c", FilePath="F:/rt-thread/src/idle.c", Line=241
-OpenDocument="startup_stm32f407xx.s", FilePath="F:/rt-thread/bsp/stm32/libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s", Line=76
-OpenDocument="drv_usart.c", FilePath="F:/rt-thread/bsp/stm32/libraries/HAL_Drivers/drv_usart.c", Line=198
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=508, h=338, FilterBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=508, h=285, FilterBarShown=0, ToolBarShown=0, ExecCountersShown=0, InstEncodingsShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=508, h=337, FilterBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=508, h=286, FilterBarShown=0, ToolBarShown=0, ExecCountersShown=0, InstEncodingsShown=0
 OpenWindow="Source", x=0, y=0, w=0, h=0, FilterBarShown=0, ToolBarShown=0, ExecCountersShown=0
 OpenWindow="Memory 1", DockArea=BOTTOM, x=1, y=0, w=955, h=323, FilterBarShown=0, ToolBarShown=0, EditorAddress=0x19B0
 OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=564, h=624, FilterBarShown=1, ToolBarShown=0
 OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=964, h=323, FilterBarShown=0, ToolBarShown=0
-TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[252;86;58;72;217]
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[252;86;58;72;75]
 TableHeader="Power Sampling", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
 TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[169;118;259]
 TableHeader="RegisterSelectionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Auto";"Name";"Address";"Description"], ColWidths=[27;27;27;27]

@@ -25,7 +25,7 @@ int main(void)
 
     fal_init();
     easyflash_init();
-
+    //elm_init();
     load_parameter();
     
     while (count++)

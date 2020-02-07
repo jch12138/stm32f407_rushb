@@ -30,6 +30,7 @@
 /* Memory Management */
 
 #define RT_USING_MEMPOOL
+#define RT_USING_MEMHEAP
 #define RT_USING_SMALL_MEM
 #define RT_USING_HEAP
 
@@ -71,6 +72,24 @@
 
 /* Device virtual file system */
 
+#define RT_USING_DFS
+#define DFS_USING_WORKDIR
+#define DFS_FILESYSTEMS_MAX 2
+#define DFS_FILESYSTEM_TYPES_MAX 2
+#define DFS_FD_MAX 16
+#define RT_USING_DFS_ELMFAT
+
+/* elm-chan's FatFs, Generic FAT Filesystem Module */
+
+#define RT_DFS_ELM_CODE_PAGE 437
+#define RT_DFS_ELM_WORD_ACCESS
+#define RT_DFS_ELM_USE_LFN_3
+#define RT_DFS_ELM_USE_LFN 3
+#define RT_DFS_ELM_MAX_LFN 255
+#define RT_DFS_ELM_DRIVES 2
+#define RT_DFS_ELM_MAX_SECTOR_SIZE 512
+#define RT_DFS_ELM_REENTRANT
+#define RT_USING_DFS_DEVFS
 
 /* Device Drivers */
 
@@ -82,13 +101,15 @@
 #define RT_USING_PIN
 #define RT_USING_ADC
 #define RT_USING_PWM
+#define RT_USING_RTC
 
 /* Using USB */
 
 
 /* POSIX layer and C standard library */
 
-#define RT_LIBC_USING_TIME
+#define RT_USING_LIBC
+#define RT_USING_POSIX
 
 /* Network */
 
@@ -131,6 +152,22 @@
 
 /* language packages */
 
+#define PKG_USING_MICROPYTHON
+
+/* Hardware Module */
+
+
+/* System Module */
+
+
+/* Tools Module */
+
+
+/* Network Module */
+
+#define PKG_MICROPYTHON_HEAP_SIZE 8192
+#define PKG_USING_MICROPYTHON_LATEST_VERSION
+#define PKG_MICROPYTHON_VER_NUM 0x99999
 
 /* multimedia packages */
 
@@ -161,9 +198,25 @@
 
 /* miscellaneous packages */
 
+#define PKG_USING_OPTPARSE
+#define PKG_USING_OPTPARSE_V100
 
 /* samples: kernel and components samples */
 
+#define PKG_USING_VI
+#define VI_MAX_LEN 4096
+#define VI_ENABLE_COLON
+#define VI_ENABLE_YANKMARK
+#define VI_ENABLE_SEARCH
+#define VI_ENABLE_DOT_CMD
+#define VI_ENABLE_READONLY
+#define VI_ENABLE_SETOPTS
+#define VI_ENABLE_SET
+#define VI_ENABLE_VI_ASK_TERMINAL
+#define VI_ENABLE_UNDO
+#define VI_ENABLE_UNDO_QUEUE
+#define VI_UNDO_QUEUE_MAX 256
+#define PKG_USING_VI_LATEST_VERSION
 #define SOC_FAMILY_STM32
 #define SOC_SERIES_STM32F4
 
