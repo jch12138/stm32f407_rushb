@@ -1,8 +1,8 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 17:30:34
- * @LastEditTime : 2020-02-04 19:34:13
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-03-07 15:50:20
+ * @LastEditors: Please set LastEditors
  * @Description: information of car , include all needed global parameters and structs.
  * @FilePath: \stm32f407-rushb\applications\car.h
  */
@@ -28,6 +28,9 @@
 #include "easyflash.h"
 
 /* various track mode */
+#define MODE_NUM    13 /* sum of tarck modes */
+#define NAME_MAX    15 
+
 #define NONE        0
 #define CENTER      1
 #define STOP        2
@@ -40,7 +43,7 @@
 #define SEESAW      9
 #define ROUND       10
 #define SLOW        11
-
+#define BACK        12
 
 typedef struct 
 {
@@ -106,5 +109,8 @@ extern LINE_POS back_line;
 
 /* oled show mode control */
 extern rt_uint8_t oled_show_mode;
+extern char track_mode[MODE_NUM][NAME_MAX];
+extern int kd[MODE_NUM];
+extern int kp[MODE_NUM];
 
 #endif

@@ -5,8 +5,8 @@
 **********************************************************************
                                                                       
 File          :                                                     
-Created       : 04 2Ã¦ÂÂ 2020  17:14                                                    
-Ozone Version : V3.10a                                                    
+Created       : 07 3Ã¦ÂÂ 2020  14:33                                                    
+Ozone Version : V3.10d                                                    
 */
 
 /*********************************************************************
@@ -22,14 +22,14 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("F:/rt-thread/bsp/stm32/stm32f407-rushb", "$(ProjectDir)");
-  Project.AddPathSubstitute ("f:/rt-thread/bsp/stm32/stm32f407-rushb", "$(ProjectDir)");
+  Project.AddPathSubstitute ("D:/STM32/rt-thread/bsp/stm32/stm32f407-rushb", "$(ProjectDir)");
+  Project.AddPathSubstitute ("d:/stm32/rt-thread/bsp/stm32/stm32f407-rushb", "$(ProjectDir)");
   Project.SetDevice ("STM32F407VE");
   Project.SetHostIF ("USB", "779169845");
   Project.SetTargetIF ("SWD");
-  Project.SetTIFSpeed ("1 MHz");
-  Project.AddSvdFile ("C:/Program Files/SEGGER/Ozone V3.10a/Config/CPU/Cortex-M4F.svd");
-  Project.AddSvdFile ("C:/Program Files/SEGGER/Ozone V3.10a/Config/Peripherals/STM32F407IG.svd");
+  Project.SetTIFSpeed ("10 MHz");
+  Project.AddSvdFile ("C:/Program Files/SEGGER/Ozone V3.10d/Config/CPU/Cortex-M4F.svd");
+  Project.AddSvdFile ("C:/Program Files/SEGGER/Ozone V3.10d/Config/Peripherals/STM32F407IG.svd");
   //
   // User settings
   //

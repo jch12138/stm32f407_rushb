@@ -21,7 +21,7 @@
 #define KEY7    GET_PIN(E, 3)
 #define KEY8    GET_PIN(E, 0)
 #define SURE    GET_PIN(E, 4)
-#define EXTI    GET_PIN(E, 1)
+#define EXIT    GET_PIN(E, 1)
 
 /**
  * @description: button initialize

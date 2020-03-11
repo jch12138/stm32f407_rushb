@@ -68,6 +68,8 @@
 #define FINSH_THREAD_STACK_SIZE 4096
 #define FINSH_CMD_SIZE 80
 #define FINSH_USING_MSH
+#define FINSH_USING_MSH_DEFAULT
+#define FINSH_USING_MSH_ONLY
 #define FINSH_ARG_MAX 10
 
 /* Device virtual file system */
@@ -152,22 +154,6 @@
 
 /* language packages */
 
-#define PKG_USING_MICROPYTHON
-
-/* Hardware Module */
-
-
-/* System Module */
-
-
-/* Tools Module */
-
-
-/* Network Module */
-
-#define PKG_MICROPYTHON_HEAP_SIZE 8192
-#define PKG_USING_MICROPYTHON_LATEST_VERSION
-#define PKG_MICROPYTHON_VER_NUM 0x99999
 
 /* multimedia packages */
 
@@ -203,20 +189,6 @@
 
 /* samples: kernel and components samples */
 
-#define PKG_USING_VI
-#define VI_MAX_LEN 4096
-#define VI_ENABLE_COLON
-#define VI_ENABLE_YANKMARK
-#define VI_ENABLE_SEARCH
-#define VI_ENABLE_DOT_CMD
-#define VI_ENABLE_READONLY
-#define VI_ENABLE_SETOPTS
-#define VI_ENABLE_SET
-#define VI_ENABLE_VI_ASK_TERMINAL
-#define VI_ENABLE_UNDO
-#define VI_ENABLE_UNDO_QUEUE
-#define VI_UNDO_QUEUE_MAX 256
-#define PKG_USING_VI_LATEST_VERSION
 #define SOC_FAMILY_STM32
 #define SOC_SERIES_STM32F4
 

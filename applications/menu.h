@@ -15,7 +15,7 @@
 #define KEY_ON	0
 #define KEY_OFF	1
 #define PAGE_DISP_NUM 7
-#define NULL 0
+//#define NULL 0
 
 typedef enum 
 {

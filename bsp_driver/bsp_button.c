@@ -1,8 +1,8 @@
 /*
  * @Author: jiang chenhui
  * @Date: 2020-01-31 19:25:12
- * @LastEditTime : 2020-02-01 13:13:43
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-03-07 15:29:11
+ * @LastEditors: Please set LastEditors
  * @Description: driver for button
  * @FilePath: \stm32f407-rushb\bsp_driver\bsp_button.c
  */
@@ -25,7 +25,7 @@ rt_err_t button_init(void)
     rt_pin_mode(KEY7, PIN_MODE_INPUT_PULLUP);
     rt_pin_mode(KEY8, PIN_MODE_INPUT_PULLUP);
     rt_pin_mode(SURE, PIN_MODE_INPUT_PULLUP);
-    rt_pin_mode(EXTI, PIN_MODE_INPUT_PULLUP);
+    rt_pin_mode(EXIT, PIN_MODE_INPUT_PULLUP);
 
     return RT_EOK;
 }
